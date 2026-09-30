@@ -9,10 +9,17 @@ LANE_COLORS = [(220,80,80),(80,180,220),(100,220,100),(220,180,60)]
 class Note:
     WIDTH = 70
     HEIGHT = 20
-    def __init__(self, lane, y=-30, speed=4):
+    def __init__(self, lane, y=-30, speed=4, hold=False):
         self.lane = lane
         self.y = y
         self.speed = speed
+
+        self.hold = hold
+        self.hold_duration = 60
+        self.holding = False
+        self.hold_start = None
+        self.completed = False
+
         self.hit = False
         self.missed = False
 
